@@ -1,0 +1,3 @@
+run="python sentence_gen.py 8"
+language="python3"
+onBoot="echo Booting up!"

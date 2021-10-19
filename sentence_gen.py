@@ -16,12 +16,25 @@ def sentence(NP,VP):
 def loop(X):
     T = ['the','their','our','his','her']
     N = ['man','woman', 'boy', 'girl', 'son', 'daughter', \
-        'ball', 'monkey', 'computer', 'guitar', 'fire']
-    Verb = ['hit','polished','healed','tore','treated','coded','ran']
+         'uncle', 'aunt', 'father', 'mother']
+    L = ['school', 'station', 'office', 'shop']
+    A = ['tall', 'short', 'fat', 'slim', 'old', 'young']
+    Verb = ['hit','pushed','healed','tore','treated','scolded','ran to']
 
     for i in range(X):
-        N1, N2 = ran.choice(N), ran.choice(N)
         T1, T2 = ran.choice(T), ran.choice(T)
+        if (T2 == T1):
+            T2 = ran.choice(T)
+        A1, A2 = ran.choice(A), ran.choice(A)
+        if (A2 == A1):
+            A2 = ran.choice(A)
+        N1, N2 = ran.choice(N), ran.choice(N)
+        if (N2 == N1):
+            N2 = ran.choice(N)
+
+        T1 = NP(T1,A1) # add adjecive after article
+        T2 = NP(T2,A2) # add adjecive after article
+
         Verb1 = ran.choice(Verb)
 
         NP1 = NP(T1,N1)
