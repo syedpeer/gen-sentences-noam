@@ -39,18 +39,24 @@ def loop(X):
         A1, A2 = ran.choice(A), ran.choice(A)
         if (A2 == A1):
             A2 = ran.choice(A)
+        NM1, NM2 = ran.choice(NM), ran.choice(NM)
+        if (NM2 == NM1):
+            NM2 = ran.choice(NM)
         N1, N2 = ran.choice(N), ran.choice(N)
         if (N2 == N1):
             N2 = ran.choice(N)
 
+        T1 = NP(NM1, T1)
+        #T2 = NP(NM2, T2)
+
         T1 = NP(T1,A1) # add adjecive after article
         T2 = NP(T2,A2) # add adjecive after article
 
-        Verb1 = ran.choice(Verb)
+        V1 = ran.choice(V)
 
         NP1 = NP(T1,N1)
         NP2 = NP(T2,N2)
-        VP1 = VP(Verb1, NP2)
+        VP1 = VP(V1, NP2)
         print(sentence(NP1,VP1))
 
 ##############################################
@@ -62,14 +68,16 @@ result_list = []
 A = []
 N = []
 T = []
-Verb = []
+V = []
+NM = []
 
 list_load('json/adjectives.json', A)
 list_load('json/nouns.json', N)
 list_load('json/articles.json', T)
-list_load('json/verbs.json', Verb)
+list_load('json/verbs.json', V)
+list_load('json/names.json', NM)
 
-print(Verb)
+print(NM)
 print()
 
 # Shorter solution by using list comprehension

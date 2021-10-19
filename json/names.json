@@ -1,0 +1,18 @@
+[
+    {"value": "Muhammed", "gender": "male"},
+    {"value": "Ahmed", "gender": "male"},
+    {"value": "Hamed", "gender": "male"},
+    {"value": "Omar", "gender": "male"},
+    {"value": "Othman", "gender": "male"},
+    {"value": "Ali", "gender": "male"},
+    {"value": "Fatima", "gender": "female"},        
+    {"value": "Khadija", "gender": "female"},
+    {"value": "Hafsah", "gender": "female"},
+    {"value": "Amal", "gender": "female"},
+    {"value": "Mona", "gender": "female"},
+    {"value": "Salma", "gender": "female"},    
+    {"value": "Salim", "gender": "male"},
+    {"value": "Tariq", "gender": "male"},   
+    {"value": "Nasser", "gender": "male"},
+    {"value": "Adel", "gender": "male"}    
+]

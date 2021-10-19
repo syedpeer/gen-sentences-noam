@@ -8,5 +8,9 @@
     {"value": "uncle"},
     {"value": "aunt"},
     {"value": "father"},
-    {"value": "mother"}     
+    {"value": "mother"},
+    {"value": "brother"},
+    {"value": "sister"},
+    {"value": "grand-father"},
+    {"value": "grand-mother"}
 ]

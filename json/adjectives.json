@@ -2,5 +2,9 @@
     {"value": "tall"},
     {"value": "short"},
     {"value": "fat"},
-    {"value": "slim"}        
+    {"value": "slim"},
+    {"value": "big"},
+    {"value": "small"},
+    {"value": "old"},
+    {"value": "young"}    
 ]
