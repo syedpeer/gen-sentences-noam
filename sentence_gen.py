@@ -17,7 +17,7 @@ def sentence(NP,VP):
 def list_load(fileName, listName):
     print(fileName, listName)
 
-    with open( fileName, mode='r') as f:
+    with open(fileName, mode='r') as f:
       # Read JSON file and store its content in an Python variable
       # By using json.load() function
       json_data = json.load(f)
@@ -64,10 +64,10 @@ N = []
 T = []
 Verb = []
 
-list_load('adjectives.json', A)
-list_load('nouns.json', N)
-list_load('articles.json', T)
-list_load('verbs.json', Verb)
+list_load('json/adjectives.json', A)
+list_load('json/nouns.json', N)
+list_load('json/articles.json', T)
+list_load('json/verbs.json', Verb)
 
 print(Verb)
 print()
