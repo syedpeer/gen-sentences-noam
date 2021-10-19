@@ -1,5 +1,6 @@
 import random as ran
 import sys
+import json
 
 def assemble(*args):
     return(" ".join(args))
@@ -13,13 +14,23 @@ def VP(Verb,NP):
 def sentence(NP,VP):
     return assemble(NP,VP)
 
+def list_load(fileName, listName):
+    print(fileName, listName)
+
+    with open( fileName, mode='r') as f:
+      # Read JSON file and store its content in an Python variable
+      # By using json.load() function
+      json_data = json.load(f)
+      
+      # So now json_data contains list of dictionaries
+      # (because every JSON is a valid Python dictionary)
+      # We start to iterate over each dictionary in our list
+      for json_dict in json_data:
+          # We append each name value to our result list
+          listName.append(json_dict['value'])
+
 def loop(X):
-    T = ['the','their','our','his','her']
-    N = ['man','woman', 'boy', 'girl', 'son', 'daughter', \
-         'uncle', 'aunt', 'father', 'mother']
     L = ['school', 'station', 'office', 'shop']
-    A = ['tall', 'short', 'fat', 'slim', 'old', 'young']
-    Verb = ['hit','pushed','healed','tore','treated','scolded','ran to']
 
     for i in range(X):
         T1, T2 = ran.choice(T), ran.choice(T)
@@ -41,6 +52,32 @@ def loop(X):
         NP2 = NP(T2,N2)
         VP1 = VP(Verb1, NP2)
         print(sentence(NP1,VP1))
+
+##############################################
+# MAINLINE
+##############################################
+
+# Then we create a result list, in which we will store our names
+result_list = []
+A = []
+N = []
+T = []
+Verb = []
+
+list_load('adjectives.json', A)
+list_load('nouns.json', N)
+list_load('articles.json', T)
+list_load('verbs.json', Verb)
+
+print(Verb)
+print()
+
+# Shorter solution by using list comprehension
+# --------------------------------------------
+# result_list = [json_dict['value'] for json_dict in json_data]
+# print(result_list)  # ['Hurzuf', 'Novinki']
+
+#sys.exit()
 
 loop(int(sys.argv[1]))
 
